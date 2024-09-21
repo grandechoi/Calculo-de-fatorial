@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+// Função para calcular o fatorial de um número
+unsigned long long calcularFatorial(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    
+    unsigned long long fatorial = 1;
+    for (int i = 2; i <= n; i++) {
+        fatorial *= i;
+    }
+    return fatorial;
+}
+
+int main() {
+    int num;
+    
+    // Solicita um número ao usuário
+    printf("Digite um número para calcular o fatorial: ");
+    scanf("%d", &num);
+    
+    // Verifica se o número é negativo
+    if (num < 0) {
+        printf("Fatorial de número negativo não existe.\n");
+    } else {
+        // Calcula e exibe o fatorial
+        printf("Fatorial de %d = %llu\n", num, calcularFatorial(num));  // %llu para unsigned long long
+    }
+    
+    return 0;
+}
